@@ -1,13 +1,51 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif,'Akira','Diavlo Light Regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Akira';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Akira Expanded Super Bold'), url('./assets/fonts/Akira.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Diavlo Light Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Diavlo Light Regular'), url('./assets/fonts/DiavloLight.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Diavlo Medium Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Diavlo Medium Regular'), url('./assets/fonts/DiavloMedium.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Rany';
+      font-style: normal;
+      font-weight: normal;
+      src: local('Rany Light'), url('./assets/fonts/Rany-Light.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'Rany Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Rany Bold'), url('./assets/fonts/Rany-Bold.woff') format('woff');
+        }
+    
+  
+
+   

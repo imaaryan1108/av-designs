@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     flexGrow: 1,
-    marginTop: "20%",
+    marginTop: "5%",
     // overflowX: "hidden",
     // overflowY : "hidden",
   },
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 function Cards() {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} >
       <Grid
         className={classes.gridContainer}
         container
@@ -111,24 +111,7 @@ function Cards() {
           {/* <Grid item xs={1} className={classes.endFiller}></Grid> */}
         </Grid>
 
-        <Grid
-          item
-          container
-          spacing={10}
-          alignItems="center"
-          justify="center"
-          className={classes.itemContainer}
-        >
-          {/* <Grid item xs={1} className={classes.startFiller}></Grid> */}
-          <Grid item xs={10} md={5} className={classes.item}>
-            <CardComponent />
-          </Grid>
-          {/* <Grid item xs={1} className={classes.filler}></Grid> */}
-          <Grid item xs={10} md={5} className={classes.item}>
-            <CardComponent />
-          </Grid>
-          {/* <Grid item xs={1} className={classes.endFiller}></Grid> */}
-        </Grid>
+       
       </Grid>
     </div>
   );

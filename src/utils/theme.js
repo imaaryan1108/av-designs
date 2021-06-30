@@ -26,16 +26,16 @@ const theme = createMuiTheme({
             third: "Rany Bold",
         }
     },
-        // typography: {
-        //   fontFamily: 'Akira',
-        // },
-        // overrides: {
-        //   MuiCssBaseline: {
-        //     '@global': {
-        //       '@font-face': [akira],
-        //     },
-          // },
-        // },
+    overrides: {
+        MuiInput: {
+          input: {
+            "&::placeholder": {
+              color: "white"
+            },
+            color: "white", // if you also want to change the color of the input, this is the prop you'd use
+          }
+        }
+    }
     
 })
 

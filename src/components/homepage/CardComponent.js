@@ -9,6 +9,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     marginBottom: pxToVw(48),
+     [theme.breakpoints.down("md")]: {
+      
+      marginTop: "5%",
+      
+   },
+   "&:hover": {
+  
+     "& $text": {
+       backgroundColor: theme.palette.secondary.main,
+       color: "rgb(235, 235, 238)",
+       fontStyle: "italic"
+     }
+   }
   },
   media: {
     maxWidth: "100%",

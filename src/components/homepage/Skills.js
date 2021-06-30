@@ -1,5 +1,8 @@
 import { Grid, makeStyles } from "@material-ui/core";
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import ae from "../../assets/images/ae.png";
 import ai from "../../assets/images/ai.png";
 import pr from "../../assets/images/pr.png";
@@ -12,8 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "10%",
     width: "100%",
+  
     flexGrow: 1,
-   
+
     // overflowX: "hidden",
     // overflowY : "hidden",
   },
@@ -31,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridContainer: {
-    
     background:
       "transparent linear-gradient(133deg, #6469F3 0%, #2228C4 100%) 0% 0% no-repeat padding-box",
     opacity: 1,
@@ -67,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(235, 235, 238)",
     fontSize: pxToVw(50),
     marginBottom: "5%",
-
+    fontFamily: theme.typography.fontFamily.third,
     [theme.breakpoints.down("md")]: {
       // fontSize: "2rem",
     },
@@ -79,9 +82,40 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Skills() {
+  const viewPortWidth = window.innerWidth;
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  const animation = useAnimation();
+
+  useEffect(() => {
+  
+    if (inView) {
+      animation.start({
+        scale: 1,
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+        },
+      });
+    }
+    if (!inView ) {
+      if(viewPortWidth > 960 ){
+        animation.start({
+          scale: 4,
+          y: "6rem",
+          opacity: 0.6,
+        });
+      }
+    
+    }
+  }, [inView]);
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div ref={ref} className={classes.root}>
       <Grid
         className={classes.gridContainer}
         container
@@ -98,7 +132,9 @@ function Skills() {
           justify="center"
           className={classes.itemContainer}
         >
-          <p className={classes.text}>SKILLS</p>
+          <motion.p animate={animation} className={classes.text}>
+            SKILLS
+          </motion.p>
         </Grid>
         <Grid
           item

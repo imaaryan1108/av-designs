@@ -1,0 +1,187 @@
+import { Grid, makeStyles, TextField } from "@material-ui/core";
+import React from "react";
+import photo from "../../assets/images/Group 11.svg";
+import { pxToVw } from "../../utils/helper";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: "7%",
+  },
+  contactImg: {
+    marginTop: "5%",
+    width: "20vw",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "40vw",
+    }
+  },
+  contactContainer: {
+    margin: "5% auto 0   auto",
+    display: "flex",
+    justifyContent: "space-around",
+    flexDirection: "column",
+    width: "35vw",
+    alignItems: "center",
+    background: "#6469F3 0% 0% no-repeat padding-box",
+    boxShadow: "7px 29px 99px #00000029",
+    border: "1px solid #70707021",
+    borderRadius: "81px",
+    opacity: 1,
+    paddingTop: "4%",
+    [theme.breakpoints.down("sm")]: {
+      width: "80vw",
+      
+    }
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  forms: {
+    width: "80vw",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  formsInput: {
+    width: "100%",
+    marginBottom: "2%",
+    background:
+      "transparent linear-gradient(133deg, #6469F3 0%, #2228C4 100%) 0% 0% no-repeat padding-box",
+    opacity: 1,
+    border: "none",
+    inputSize: "2rem",
+    fontSize: "2.5rem",
+    borderRadius: "8vh",
+    padding: "2% 3% 1% 3%",
+    color: theme.palette.primary.main,
+
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "8%"
+    }
+  },
+  formsIdeaInput: {
+    width: "100%",
+    marginBottom: "2%",
+    background:
+      "transparent linear-gradient(133deg, #6469F3 0%, #2228C4 100%) 0% 0% no-repeat padding-box",
+    opacity: 1,
+    border: "none",
+    inputSize: "2rem",
+    fontSize: "2.5rem",
+    borderRadius: "4vh",
+    padding: "2% 3% 1% 3%",
+    color: theme.palette.primary.main,
+
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "5%"
+    }
+  },
+  formsContainer: {
+    marginTop: "5%",
+    display: "flex",
+    justifyContent: "space-around",
+  },
+  input: {
+    "&::placeholder": {
+      fontFamily: theme.typography.fontFamily.second,
+      letterSpacing: "6px",
+      fontSize: pxToVw(20),
+
+      [theme.breakpoints.down("sm")]: {
+        fontSize: pxToVw(15),
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: pxToVw(10),
+      },
+    },
+  },
+  connectText: {
+    fontSize: pxToVw(81),
+    marginBottom: pxToVw(7),
+    marginTop: "10%",
+    marginLeft: "auto",
+    marginRight: "auto",
+
+    fontWeight: "900",
+    letterSpacing: "1px",
+    color: theme.palette.secondary.main,
+    fontFamily: theme.typography.fontFamily.third,
+    background:
+      "transparent linear-gradient(96deg, #6469F3 0%, #2228C4 100%) 0% 0% no-repeat padding-box",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "4rem",
+      // marginBottom: "-0.8rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
+      // marginBottom: "-0.5rem",
+    },
+  },
+  contactIdea: {
+    fontSize: pxToVw(35),
+    fontFamily: theme.typography.fontFamily.second,
+    color: theme.palette.primary.main,
+    fontWeight: "800",
+   
+    [theme.breakpoints.down("sm")]: {
+      fontSize: pxToVw(20),
+    }
+
+    },
+}));
+function Contact() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root} id="contact">
+      <div className={classes.container}>
+        <div className={classes.contactContainer}>
+          <p className={classes.contactIdea}>BRING YOUR IDEAS </p>
+          <p className={classes.contactIdea}> TO LIFE!! </p>
+
+          <img src={photo} className={classes.contactImg} />
+        </div>
+        <div className={classes.connectText}>
+          <p> LET'S CONNECT</p>
+        </div>
+        <div className={classes.formsContainer}>
+          <form className={classes.forms}>
+            <TextField
+              placeholder="NAME"
+              multiline
+              className={classes.formsInput}
+              InputProps={{
+                classes: { input: classes.input },
+                disableUnderline: true,
+              }}
+            />
+            <TextField
+              placeholder="EMAIL"
+              multiline
+              className={classes.formsInput}
+              InputProps={{
+                classes: { input: classes.input },
+                disableUnderline: true,
+              }}
+            />
+            <TextField
+              placeholder="YOUR IDEA"
+              multiline
+              className={classes.formsIdeaInput}
+              rows={8}
+              InputProps={{
+                classes: { input: classes.input },
+                disableUnderline: true,
+              }}
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Contact;

@@ -10,6 +10,7 @@ import { createStore } from "redux";
 import viewReducer from "./components/homepage/reducers/isView";
 import allReducers from "./components/homepage/reducers";
 import { Provider } from "react-redux";
+import Popup from "react-popup";
 
 const store = createStore(
   allReducers,
@@ -21,6 +22,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Provider store={store}>
+        <Popup />
         <App />
       </Provider>
     </ThemeProvider>

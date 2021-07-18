@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import rooter from "../../assets/images/Rooter, Light, Register@2x_2.png";
 import image1 from "../../assets/images/image1.png";
 import legend from "../../assets/images/logo_legendaryalliance_LA-full-logo-white.png";
+import services from "../../shared/services";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imgServices: {
-    marginLeft:"10%",
+    marginLeft: "10%",
     marginRight: "10%",
 
     [theme.breakpoints.down("sm")]: {
@@ -108,8 +109,7 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       marginLeft: "auto",
       marginRight: "auto",
-    }
-    
+    },
   },
 }));
 
@@ -175,34 +175,16 @@ function Services() {
           justify="space-between"
           className={classes.itemContainer}
         >
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
-        </Grid>
-
-        <Grid
-          item
-          container
-          spacing={0}
-          alignItems="center"
-          justify="space-between"
-          className={classes.itemContainer}
-        >
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <ServiceComponent />
-          </Grid>
+          {services.map((service) => (
+            <Grid item xs={12} md={4}>
+              <ServiceComponent
+                title={service.title}
+                content={service.content}
+                url={service.url}
+                photo={service.photo}
+              />
+            </Grid>
+          ))}
         </Grid>
 
         <Grid
@@ -214,13 +196,13 @@ function Services() {
           className={classes.itemContainer}
         >
           <Grid item xs={12} md={1}>
-             <img src={legend} className={classes.imgServices}/>
+            <img src={legend} className={classes.imgServices} />
           </Grid>
           <Grid item xs={12} md={2}>
-          <img src={rooter} className={classes.imgServices}/>
+            <img src={rooter} className={classes.imgServices} />
           </Grid>
           <Grid item xs={12} md={2}>
-           <img src={image1} className={classes.imgServices}/>
+            <img src={image1} className={classes.imgServices} />
           </Grid>
         </Grid>
       </Grid>

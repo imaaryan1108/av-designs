@@ -5,17 +5,15 @@ import posterImgBig from "../../assets/images/Group 13@2x.png";
 import { pxToVw } from "../../utils/helper";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-  
-  },
+  root: {},
   service: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     // background: "#EBEBEE 0% 0% no-repeat padding-box",
-    marginLeft:"10%",
+    marginLeft: "10%",
     marginRight: "10%",
-
+    justifyContent: "space-between",
     padding: "15%",
     margin: "10% auto",
 
@@ -36,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
           color: theme.palette.secondary.main,
         },
         "& $imgPoster": {
-          transform: "scale(1.2)",
+          transform: "scale(0.7)",
           transition: "0.5s",
         },
         "& $subTitle": {
@@ -46,12 +44,12 @@ const useStyles = makeStyles((theme) => ({
           color: theme.palette.secondary.main,
         },
         "& $button": {
-            background: "none",
-            border: "none",
-            boxShadow: "none",
-            color: theme.palette.secondary.main,
-            fontFamily: theme.typography.fontFamily.third,
-            transform: "scale(1.3)",
+          background: "none",
+          border: "none",
+          boxShadow: "none",
+          color: theme.palette.secondary.main,
+          fontFamily: theme.typography.fontFamily.third,
+          transform: "scale(1.3)",
         },
       },
     },
@@ -60,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: theme.typography.fontFamily.third,
     color: "rgb(235, 235, 238)",
     marginTop: "5%",
+    whiteSpace: "no-wrap",
+
+    minWidth: pxToVw(260),
+    textAlign: "center",
     fontSize: pxToVw(20),
     [theme.breakpoints.down("sm")]: {
       fontSize: pxToVw(15),
@@ -68,9 +70,11 @@ const useStyles = makeStyles((theme) => ({
   subTitle: {
     textAlign: "center",
     fontFamily: theme.typography.fontFamily.second,
-      color: "rgb(235, 235, 238)",
+    color: "rgb(235, 235, 238)",
     margin: "8% auto",
     // maxWidth: "15vw",
+
+    minHeight: pxToVw(230),
     [theme.breakpoints.down("sm")]: {
       marginTop: "15%",
       marginLeft: "0",
@@ -84,39 +88,39 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 3px 13px #00000029",
     borderRadius: "61px",
     opacity: 1,
+    padding: "5% 10%",
     color: "rgb(235, 235, 238)",
     textShadow: "0px 3px 13px #00000029",
-    marginTop: "8%",
-
+    marginTop: "2%",
+    textDecoration: "none",
     "&:hover": {
-        background: "#6469F3 0% 0% no-repeat padding-box",
+      background: "#6469F3 0% 0% no-repeat padding-box",
     },
   },
   imgPoster: {
-    transform: "scale(1)",
+    transform: "scale(0.5)",
   },
 }));
-function ServiceComponent() {
+function ServiceComponent({ title, content, url, photo }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <div className={classes.service}>
-        <img className={classes.imgPoster} src={posterImg} />
+        <img className={classes.imgPoster} src={photo} />
 
-        <p className={classes.title}> POSTER DESIGN</p>
-        <p className={classes.subTitle}>
-          {" "}
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum.
-        </p>
+        <p className={classes.title}> {title}</p>
+        <p className={classes.subTitle}> {content}</p>
 
-        <Button variant="contained" className={classes.button}>
+        <a
+          href={url}
+          target="_blank"
+          variant="contained"
+          className={classes.button}
+        >
           {" "}
           Order Now
-        </Button>
+        </a>
       </div>
     </div>
   );

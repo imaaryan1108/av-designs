@@ -4,7 +4,7 @@ import logo from "../../assets/images/LOGO.svg";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { Link } from 'react-scroll';
+import { Button, Link } from 'react-scroll';
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -190,7 +190,10 @@ function Navbar() {
   window.addEventListener("resize", showButton);
 
 
-
+  const fun = () => {
+    const el = document.getElementById("about")
+    el.scrollIntoView()
+  }
   const classes = useStyles();
   return (
     
@@ -226,10 +229,11 @@ function Navbar() {
                 to="about"
                 smooth={true} 
                 className={classes.navLinks}
-                onClick={closeMobileMenu}
+                 onClick={closeMobileMenu}
               >
                 About
               </Link>
+             
             </li>
             <li className={classes.navItem}>
               <Link 

@@ -8,14 +8,13 @@ import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    
     marginTop: "2%",
+    marginBottom: "3%",
     // height: "100vh",
 
     [theme.breakpoints.down("sm")]: {
       marginTop: "10%",
-   },
-    
+    },
   },
 
   aboutImg: {
@@ -29,9 +28,8 @@ const useStyles = makeStyles((theme) => ({
     // boxShadow: "-19px 25px 99px #00000029",
 
     [theme.breakpoints.down("md")]: {
-      
-       marginLeft: "auto",
-       marginRight: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
     },
   },
   about: {
@@ -54,33 +52,30 @@ const useStyles = makeStyles((theme) => ({
     border: "1px soid #707070",
     textAlign: "center",
     padding: "2% 2% 0 2%",
-    height: "50vh",
+    height: "60vh",
     boxShadow: "20px 20px 1px #EFEFEF",
     fontFamily: theme.typography.fontFamily.second,
-    fontSize: "1.5rem",
+    fontSize: pxToVw(20),
     fontWeight: "900",
 
     [theme.breakpoints.down("md")]: {
       marginLeft: "auto",
-       marginRight: "auto", 
+      marginRight: "auto",
       boxShadow: "none",
       border: "none",
       margin: "3%",
-     
+
       width: "90vw",
-      fontSize: "1.5rem",
-      
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1rem",
-      
+      fontSize: pxToVw(17),
     },
   },
   name: {
     position: "absolute",
-    top: "14rem",
-    left: "30rem",
-    fontSize: pxToVw(40),
+    top: pxToVw(190),
+    left: pxToVw(350),
+    fontSize: pxToVw(35),
     color: "rgb(235, 235, 238)",
     fontFamily: theme.typography.fontFamily.second,
     fontWeight: "800",
@@ -92,33 +87,23 @@ const useStyles = makeStyles((theme) => ({
     width: "50vw",
     letterSpacing: "2.5px",
 
-    [theme.breakpoints.down("md")]: { 
-       marginLeft: "auto",
-       marginRight: "auto",
-       position: "static",
-       width: "55vw",
-       padding: "2%",
-       fontSize: pxToVw(17),
-       textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "auto",
+      marginRight: "auto",
+      position: "static",
+      width: "55vw",
+      padding: "2%",
+      fontSize: pxToVw(17),
+      textAlign: "center",
     },
-    [theme.breakpoints.up("lg")]: {
-      
-    }
+    [theme.breakpoints.up("lg")]: {},
   },
   info: {
-    
- 
-
-    [theme.breakpoints.down("md")]: {
-      
-    },
-    
+    [theme.breakpoints.down("md")]: {},
   },
 }));
 
 function About() {
- 
-
   const classes = useStyles();
   return (
     <div className={classes.root} id="about">
@@ -127,15 +112,20 @@ function About() {
         <p className={classes.name}>ADITYA VISHWAKARMA</p>
 
         <div className={classes.aboutText}>
-          <p >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo
+          <p>
+            Welcome, myself Aditya, a Graphics Designer based in India. I kicked
+            off my graphic designing career as a hobby during the initial period
+            of lockdown. As my friends and family began to witness my work, I
+            started designing materials for everything related from Gaming to
+            requirements for a startup. Currently, I am open to all kinds of
+            design work, although I am always drawn to passion projects that
+            allow me to go back to my roots of designing. My interest outside of
+            designing include, music, I am a self-taught intermediate-level
+            guitarist and post often on my Instagram Account. I am eager to work
+            with up-and-coming gaming brands, although I certainly enjoy
+            designing for well-established companies too. If you like my work,
+            please reach out by filling in the contact form below. I can't wait
+            to learn about your brand's design needs!"
           </p>
         </div>
       </div>

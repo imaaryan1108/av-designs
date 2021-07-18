@@ -10,10 +10,18 @@ import { useInView } from "react-intersection-observer";
 import { useDispatch } from "react-redux";
 import { inViewTrue, notInViewTrue } from "./actions";
 import { Link } from "react-scroll";
+import tree from "../../assets/images/LINES.svg";
+import img0 from "../../assets/images/Layer 2.svg";
+import img1 from "../../assets/images/Layer 2-1.svg";
+import img2 from "../../assets/images/Layer 2-2.svg";
+import img3 from "../../assets/images/Layer 2-3.svg";
+import img4 from "../../assets/images/Layer 2-4.svg";
+import img5 from "../../assets/images/Layer 2-5.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "90vh",
+    position: "relative",
   },
   header: {
     position: "relative",
@@ -25,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "13%",
     border: "none",
     outline: "none",
+    position: "relative",
     // [theme.breakpoints.down]
 
     "&::before": {
@@ -43,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
       // right: "0",
       // bottom: "0",
       width: "100%",
-      height: "100vh",
+      height: "90vh",
       opacity: "0.3",
     },
 
@@ -132,17 +141,17 @@ const useStyles = makeStyles((theme) => ({
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
 
-   [theme.breakpoints.up("md")]: {
-    "&:hover": {
-      fontSize: pxToVw(90),
-      transition: "0.3s",
-      background:
-        "transparent linear-gradient(270deg, #464BD5 0%, #8F92E0 44%, #EBEBEE 100%) 0% 0% no-repeat padding-box",
-      opacity: 1,
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
+    [theme.breakpoints.up("md")]: {
+      "&:hover": {
+        fontSize: pxToVw(90),
+        transition: "0.3s",
+        background:
+          "transparent linear-gradient(270deg, #464BD5 0%, #8F92E0 44%, #EBEBEE 100%) 0% 0% no-repeat padding-box",
+        opacity: 1,
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      },
     },
-   },
 
     [theme.breakpoints.down("sm")]: {
       fontSize: "4rem",
@@ -259,6 +268,55 @@ const useStyles = makeStyles((theme) => ({
     //     padding: 6px 8px;
     // }
   },
+  treeDiv: {
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+    [theme.breakpoints.down("xs")]: {
+      transform: "scale(0.7)",
+    },
+  },
+  tree: {
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+    height: "",
+  },
+  img0: {
+    right: pxToVw(117),
+    bottom: pxToVw(194),
+    position: "absolute",
+  },
+  img1: {
+    right: pxToVw(117),
+    bottom: pxToVw(94),
+    position: "absolute",
+  },
+  img2: {
+    right: pxToVw(59),
+    bottom: pxToVw(130),
+    position: "absolute",
+  },
+  img3: {
+    right: pxToVw(56),
+    bottom: pxToVw(222),
+    position: "absolute",
+    transform: "scale(0.8)",
+  },
+  img4: {
+    right: pxToVw(58),
+    bottom: pxToVw(310),
+    position: "absolute",
+  },
+  img5: {
+    right: pxToVw(111),
+    bottom: pxToVw(398),
+    position: "absolute",
+    transform: "scale(0.9)",
+  },
+  temp: {
+    background: "red",
+  },
 }));
 function Homepage() {
   const [ref, inView] = useInView({
@@ -303,8 +361,29 @@ function Homepage() {
             </div>
           </div>
         </div>
-
-        {/* <img src={imageBig} className={classes.icon} /> */}
+        <div className={classes.treeDiv}>
+          <div className={classes.tree}>
+            <img src={tree} />
+          </div>
+          <div className={classes.img0}>
+            <img src={img0} />
+          </div>
+          <div className={classes.img1}>
+            <img src={img2} />
+          </div>
+          <div className={classes.img2}>
+            <img src={img5} />
+          </div>
+          <div className={classes.img3}>
+            <img src={img4} />
+          </div>
+          <div className={classes.img4}>
+            <img src={img3} />
+          </div>
+          <div className={classes.img5}>
+            <img src={img1} />
+          </div>
+        </div>
       </div>
     </div>
   );

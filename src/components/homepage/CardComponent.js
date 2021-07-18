@@ -2,26 +2,23 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
-import bg from "../../assets/images/Thumbnail.jpg";
+import bg from "../../assets/images/gaming.png";
 import { pxToVw } from "../../utils/helper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     marginBottom: pxToVw(48),
-     [theme.breakpoints.down("md")]: {
-      
+    [theme.breakpoints.down("md")]: {
       marginTop: "5%",
-      
-   },
-   "&:hover": {
-  
-     "& $text": {
-       backgroundColor: theme.palette.secondary.main,
-       color: "rgb(235, 235, 238)",
-       fontStyle: "italic"
-     }
-   }
+    },
+    "&:hover": {
+      "& $text": {
+        backgroundColor: theme.palette.secondary.main,
+        color: "rgb(235, 235, 238)",
+        fontStyle: "italic",
+      },
+    },
   },
   media: {
     maxWidth: "100%",
@@ -69,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: theme.typography.fontFamily.second,
     fontWeight: "800",
     fontSize: "1.5rem",
-    
 
     // "&:hover": {
     //   backgroundColor: "#2228C4",
@@ -83,14 +79,17 @@ export default function CardComponent() {
 
   return (
     <div className={classes.root}>
-      <a href = "https://www.behance.net/gallery/120450505/LA-GAMING" target="_blank"> 
-      <div>
-        <p className={classes.text}>Lord</p>
-      </div>
-      <Card>
-        <CardMedia className={classes.media} image={bg}  />
-      </Card>
-      </a>  
+      <a
+        href="https://www.behance.net/gallery/120450505/LA-GAMING"
+        target="_blank"
+      >
+        <div>
+          <p className={classes.text}>Lord</p>
+        </div>
+        <Card>
+          <CardMedia className={classes.media} image={bg} />
+        </Card>
+      </a>
     </div>
   );
 }

@@ -63,7 +63,6 @@ function Home() {
   const animation = useAnimation();
 
   useEffect(() => {
-    console.log("inView = ", inView);
     if (inView) {
       animation.start({
         scale: 1,
@@ -73,9 +72,15 @@ function Home() {
           duration: 0.5,
         },
       });
-    }
-    if (!inView) {
-      if (viewPortWidth > 960) {
+    } else {
+      if (viewPortWidth > 960 && viewPortWidth <= 1280) {
+        animation.start({
+          scale: 2,
+          y: "3rem",
+          opacity: "0.6",
+        });
+      }
+      else if (viewPortWidth > 1280) {
         animation.start({
           scale: 2.8,
           y: "6rem",
@@ -83,7 +88,7 @@ function Home() {
         });
       }
     }
-  }, [inView]);
+  }, [inView,viewPortWidth]);
 
   const classes = useStyles();
   return (
